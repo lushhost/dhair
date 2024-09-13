@@ -47,24 +47,35 @@
 
     <!-- JavaScript to handle the comment system -->
     <script>
+        // Open the comment popup
         function openCommentPopup() {
-            document.getElementById('comment-popup').style.display = 'block';
+            document.getElementById('comment-popup').style.display = 'flex';
         }
 
+        // Close the comment popup
         function closeCommentPopup() {
             document.getElementById('comment-popup').style.display = 'none';
         }
 
+        // Submit a comment and save to local storage
         function submitComment() {
             const name = document.getElementById('name').value.trim();
             const comment = document.getElementById('comment').value.trim();
 
             if (name && comment) {
-                const commentSection = document.getElementById('comments-section');
-                const commentElement = document.createElement('div');
-                commentElement.classList.add('comment');
-                commentElement.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
-                commentSection.appendChild(commentElement);
+                const newComment = { name, comment };
+
+                // Retrieve existing comments from local storage
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+                // Add the new comment
+                comments.push(newComment);
+
+                // Save the updated comments back to local storage
+                localStorage.setItem('comments', JSON.stringify(comments));
+
+                // Display the updated comments
+                displayComments();
 
                 // Clear input fields and close popup
                 document.getElementById('name').value = '';
@@ -74,6 +85,25 @@
                 alert('Please fill in both your name and comment.');
             }
         }
+
+        // Display comments from local storage
+        function displayComments() {
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            const commentSection = document.getElementById('comments-section');
+            commentSection.innerHTML = ''; // Clear the current comments
+
+            comments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.classList.add('comment');
+                commentElement.innerHTML = `<strong>${comment.name}</strong><p>${comment.comment}</p>`;
+                commentSection.appendChild(commentElement);
+            });
+        }
+
+        // Load and display comments on page load
+        window.onload = function() {
+            displayComments();
+        };
     </script>
 </body>
 </html>
