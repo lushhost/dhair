@@ -1,3 +1,33 @@
+.navbar {
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 10px;
+    font-size: 1.5em;
+}
+
+.navbar-links {
+    margin: 0 auto; /* Center the navigation links horizontally */
+    display: flex;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+.navbar-links a:hover {
+    background-color: darkred;
+}
 /* Comment Button */
 .comment-button-container {
     text-align: center; /* Center the button below the navbar */
