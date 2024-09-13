@@ -28,6 +28,7 @@
 .navbar-links a:hover {
     background-color: darkred;
 }
+
 /* Comment Button */
 .comment-button-container {
     text-align: center; /* Center the button below the navbar */
