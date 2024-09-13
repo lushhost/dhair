@@ -64,14 +64,17 @@ body {
     background-color: darkblue;
 }
 
+/* Popup Thumbnail */
 .popup-thumbnail {
     position: fixed;
-    width: 100px;
-    height: 100px;
+    width: 300px; /* Ensure the width is correct for the image */
+    height: 600px; /* Ensure the height is correct for the image */
     display: none;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it appears above other content */
+    overflow: hidden; /* Hide overflow if necessary */
 }
 
+/* Specific styles for left and right popups */
 .popup-thumbnail.left {
     left: 0;
     top: 50%;
@@ -82,4 +85,10 @@ body {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.popup-thumbnail img {
+    width: 100%; /* Make the image scale to container width */
+    height: 100%; /* Make the image scale to container height */
+    object-fit: cover; /* Ensure the image covers the container */
 }
