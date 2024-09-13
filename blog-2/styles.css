@@ -83,3 +83,37 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* Styles for Cool Animated Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above the button container */
+}
+
+.animated-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.download-button {
+    background-color: #4CAF50; /* Green color for download button */
+}
+
+.youtube-button {
+    background-color: #FF0000; /* Red color for YouTube button */
+}
+
+.animated-button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    opacity: 0.9; /* Slight transparency effect */
+}
