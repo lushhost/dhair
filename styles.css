@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 10px;
+    font-size: 1.5em;
+}
+
+.navbar-links {
+    margin: 0 auto; /* Center the navigation links horizontally */
+    display: flex;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+.navbar-links a:hover {
+    background-color: darkred;
+}
+
+.content {
+    padding: 20px;
+    background-color: white; /* Ensure background color matches */
+    border-radius: 10px; /* Smaller curved corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin-bottom: 20px; /* Space below each blog section */
+    max-width: 800px; /* Limit width to make it more contained */
+    /* Align content to left side of the page */
+    margin-left: 20px;
+}
+
+.read-more-button {
+    display: block;
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.read-more-button:hover {
+    background-color: darkblue;
+}
+
+.popup-thumbnail {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    display: none;
+    z-index: 1000;
+}
+
+.popup-thumbnail.left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-thumbnail.right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}

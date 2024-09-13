@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotDhairya_</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">NotDhairya_</div>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="social/index.html">Social</a>
+            <a href="comment/index.html">Comment</a>
+        </div>
+    </div>
+    <div class="content">
+        <!-- Your blog content here -->
+        <h1>5 Windows Settings fo..</h1>
+        <p>Improve your Gaming Performance</p>
+        <!-- Read More Button -->
+        <button class="read-more-button">Read More</button>
+    </div>
+    <div class="content">
+        <!-- Your blog content here -->
+        <h1>How to fix OpenGL er...</h1>
+        <p>Jump to 1.21 from 1.16</p>
+        <!-- Read More Button -->
+        <button class="read-more-button">Read More</button>
+    </div>
+    <div class="popup-thumbnail left">
+        <img src="path-to-left-thumbnail.jpg" alt="Left Thumbnail">
+    </div>
+    <div class="popup-thumbnail right">
+        <img src="path-to-right-thumbnail.jpg" alt="Right Thumbnail">
+    </div>
+
+    <script>
+        const leftPopup = document.querySelector('.popup-thumbnail.left');
+        const rightPopup = document.querySelector('.popup-thumbnail.right');
+        let showLeft = true;
+
+        function showPopup() {
+            if (showLeft) {
+                leftPopup.style.display = 'block';
+                setTimeout(() => leftPopup.style.display = 'none', 5000); // Show for 5 seconds
+            } else {
+                rightPopup.style.display = 'block';
+                setTimeout(() => rightPopup.style.display = 'none', 5000); // Show for 5 seconds
+            }
+            showLeft = !showLeft;
+        }
+
+        setInterval(showPopup, 20000); // Change pop-up every 20 seconds
+    </script>
+</body>
+</html>
