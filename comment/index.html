@@ -9,16 +9,16 @@
     <link rel="icon" href="../icon.png" type="image/png">
 
     <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
         <div class="navbar-brand">NotDhairya_</div>
         <div class="navbar-links">
-            <a href="../">Home</a>
-            <a href="../social/">Social</a>
-            <a href="">Comment</a>
+            <a href="../index.html">Home</a>
+            <a href="../social/index.html">Social</a>
+            <a href="index.html">Comment</a>
         </div>
     </div>
 
@@ -45,7 +45,15 @@
         </div>
     </div>
 
-    <!-- JavaScript to handle the comment system -->
+    <!-- Advertisement Popups -->
+    <div class="popup-thumbnail left">
+        <img src="path-to-left-thumbnail.jpg" alt="Left Thumbnail">
+    </div>
+    <div class="popup-thumbnail right">
+        <img src="path-to-right-thumbnail.jpg" alt="Right Thumbnail">
+    </div>
+
+    <!-- JavaScript for Comment System and Advertisement Popups -->
     <script>
         // Open the comment popup
         function openCommentPopup() {
@@ -104,6 +112,24 @@
         window.onload = function() {
             displayComments();
         };
+
+        // Advertisement Popups Logic
+        const leftPopup = document.querySelector('.popup-thumbnail.left');
+        const rightPopup = document.querySelector('.popup-thumbnail.right');
+        let showLeft = true;
+
+        function showPopup() {
+            if (showLeft) {
+                leftPopup.style.display = 'block';
+                setTimeout(() => leftPopup.style.display = 'none', 10000); // Show for 10 seconds
+            } else {
+                rightPopup.style.display = 'block';
+                setTimeout(() => rightPopup.style.display = 'none', 10000); // Show for 10 seconds
+            }
+            showLeft = !showLeft;
+        }
+
+        setInterval(showPopup, 15000); // Change pop-up every 15 seconds
     </script>
 </body>
 </html>
