@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotDhairya_ - Comment</title>
+
+    <!-- Favicon Code -->
+    <link rel="icon" href="../icon.png" type="image/png">
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-brand">NotDhairya_</div>
+        <div class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="../social/index.html">Social</a>
+            <a href="index.html">Comment</a>
+        </div>
+    </div>
+
+    <!-- Comment Button -->
+    <div class="comment-button-container">
+        <button class="comment-button" onclick="openCommentPopup()">Comment</button>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments-section" id="comments-section">
+        <!-- Comments will appear here -->
+    </div>
+
+    <!-- Comment Popup -->
+    <div class="comment-popup" id="comment-popup">
+        <div class="comment-popup-content">
+            <h2>Add a Comment</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name">
+            <label for="comment">Comment:</label>
+            <textarea id="comment" placeholder="Your Comment"></textarea>
+            <button class="submit-comment-button" onclick="submitComment()">Submit</button>
+            <button class="close-comment-button" onclick="closeCommentPopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle the comment system -->
+    <script>
+        function openCommentPopup() {
+            document.getElementById('comment-popup').style.display = 'block';
+        }
+
+        function closeCommentPopup() {
+            document.getElementById('comment-popup').style.display = 'none';
+        }
+
+        function submitComment() {
+            const name = document.getElementById('name').value.trim();
+            const comment = document.getElementById('comment').value.trim();
+
+            if (name && comment) {
+                const commentSection = document.getElementById('comments-section');
+                const commentElement = document.createElement('div');
+                commentElement.classList.add('comment');
+                commentElement.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+                commentSection.appendChild(commentElement);
+
+                // Clear input fields and close popup
+                document.getElementById('name').value = '';
+                document.getElementById('comment').value = '';
+                closeCommentPopup();
+            } else {
+                alert('Please fill in both your name and comment.');
+            }
+        }
+    </script>
+</body>
+</html>

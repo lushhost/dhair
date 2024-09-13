@@ -1,0 +1,20 @@
+/* Social Page Content */
+.social-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 80vh; /* Adjust height for centering */
+    flex-direction: column; /* Align icons vertically */
+    gap: 20px; /* Space between the icons */
+}
+
+.social-icon {
+    width: 80px; /* Set width for icons */
+    height: 80px; /* Set height for icons */
+    cursor: pointer;
+    transition: transform 0.3s; /* Animation effect on hover */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}

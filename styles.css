@@ -43,8 +43,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
     margin-bottom: 20px; /* Space below each blog section */
     max-width: 800px; /* Limit width to make it more contained */
-    /* Align content to left side of the page */
-    margin-left: 20px;
+    margin-left: 20px; /* Align content to left side of the page */
+    margin-top: 30px; /* Add space between navigation bar and content */
 }
 
 .read-more-button {
