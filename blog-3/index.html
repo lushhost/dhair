@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Display - NotDhairya_</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">NotDhairya_</div>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="social.html">Social</a>
+            <a href="comment.html">Comment</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Code Snippet Example</h1>
+        <p>Below are examples of HTML and CSS code. You can click the "Copy" buttons to copy the respective code.</p>
+
+        <!-- HTML Code Block -->
+        <div class="code-block">
+            <h2>HTML Code</h2>
+            <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="assets/styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;a href=&quot;#&quot; download=&quot;filename.txt&quot;&gt;Download File&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <button class="copy-button" onclick="copyCode('html')">Copy HTML</button>
+        </div>
+
+        <!-- CSS Code Block -->
+        <div class="code-block">
+            <h2>CSS Code</h2>
+            <pre><code class="css">
+a {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: #3e8e41;
+}
+            </code></pre>
+            <button class="copy-button" onclick="copyCode('css')">Copy CSS</button>
+        </div>
+    </div>
+
+    <script>
+        // Copy function for code blocks
+        function copyCode(language) {
+            const codeBlock = document.querySelector(`code.${language}`).textContent;
+            const tempTextarea = document.createElement('textarea');
+            tempTextarea.value = codeBlock;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextarea);
+            alert(language.toUpperCase() + ' code copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
